@@ -1,0 +1,69 @@
+##############################
+# www.pangu16.com
+# huoliang
+# 2018-08-27
+# SCC-PROVIDER
+##############################
+
+application:
+    environment: ide
+
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://pgsqldb1.cd.pangu16.com:5432/dev_pangu_iscc
+        # url: jdbc:postgresql://localhost:5432/dev_pangu_iscc
+        username: postgres
+        password: Pangu@2016
+        hikari:
+            minimum-idle: 2
+    jpa:
+        hibernate:
+            ddl-auto: none
+        show-sql: true
+    redis:
+        host: sccdev.cd.pangu16.com
+        # host: 192.168.110.45
+        port: 6379
+        password: 123456
+        database: 2
+    application:
+        name: scc-provider
+    rabbitmq:
+        host: rabbit.cd.pangu16.com
+        port: 5672
+        username: admin
+        password: Pangu@2016
+        virtual-host: /local
+
+
+dubbo:
+    application:
+        id: scc-provider
+        name: scc-provider
+    protocol:
+        id: dubbo
+        name: dubbo
+        port: -1
+    scan:
+        basePackages: com.pangu16.scc.facade
+    registry:
+        id: scc-provider
+        address: zookeeper://127.0.0.1:2181
+        #group: local
+    provider:
+        host: 127.0.0.1
+        filter: tracing
+    consumer:
+        client: netty
+        check: false
+        timeout: 200000
+        retries: 0
+        filter: tracing
+
+logging:
+    config: classpath:logback.xml
+
+
+zipkin:
+    url: http://localhost:9411/api/v2/spans
