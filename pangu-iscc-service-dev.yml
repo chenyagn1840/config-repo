@@ -55,12 +55,3 @@ dubbo:
         timeout: 200000
         retries: 0
         filter: tracing
-
-logging:
-    config: classpath:logback.xml
-
-#JDE手动获取数据接口地址
-jdeUrl: http://sccdev.cd.pangu16.com:19010/adapter-jde/rest/external/interface/
-
-zipkin:
-    url: http://localhost:9411/api/v2/spans
