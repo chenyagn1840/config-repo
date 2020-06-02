@@ -5,7 +5,7 @@ server:
 spring:
     application:
         aliascopy:
-            name: iscc-service-test-alias-copy1
+            name: iscc-service-test-alias-copy2
         alias:
-            name: iscc-service-test-alias
+            name: iscc-service-test-alias1
         name: iscc-service-test
