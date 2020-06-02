@@ -1,57 +1,6 @@
-##############################
-# www.pangu16.com
-# tangfeifei
-# 2018-09-11
-##############################
 
-# 业务参数
-application:
-    exception:
-        detail: true
-    environment: ide
-    channel:
-        token: 4bd4be72265745cea360254a57b03050
-
-server:
-    port: 17010
-    servlet:
-        context-path: /iscc-server
-    tomcat:
-        connection-timeout: 200000
 
 spring:
     application:
         name: iscc-service-de
-    mvc:
-        date-format: yyyy-MM-dd HH:mm:ss
-        time-zone: UTC
-    jackson:
-        date-format: yyyy-MM-dd HH:mm:ss
-        time-zone: UTC
-    servlet:
-        multipart:
-            max-file-size: 100MB
-            max-request-size: 100MB
-
-dubbo:
-    application:
-        id: iscc-service
-        name: iscc-service
-    protocol:
-        id: dubbo
-        name: dubbo
-        port: -1
-    registries:
-        local:
-            address: zookeeper://127.0.0.1:2181
-        dev:
-            address: zookeeper://sccdev.cd.pangu16.com:2181
-            register: false
-    provider:
-        host: 127.0.0.1
-    consumer:
-        client: netty
-        check: false
-        timeout: 200000
-        retries: 0
-        filter: tracing
+  
