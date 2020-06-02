@@ -4,6 +4,8 @@ server:
     port: 17010
 spring:
     application:
+        aliascopy:
+            name: iscc-service-test-alias-copy
         alias:
             name: iscc-service-test-alias
         name: iscc-service-test
