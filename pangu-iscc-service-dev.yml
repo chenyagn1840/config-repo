@@ -2,5 +2,6 @@
 
 spring:
     application:
-        name: iscc-service-de
+        alias:
+            name: iscc-service-de
   
