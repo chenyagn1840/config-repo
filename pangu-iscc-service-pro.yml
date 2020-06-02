@@ -21,7 +21,7 @@ server:
 
 spring:
     application:
-        name: iscc-service
+        name: iscc-service-test
     mvc:
         date-format: yyyy-MM-dd HH:mm:ss
         time-zone: UTC
